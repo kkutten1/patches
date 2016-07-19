@@ -1,0 +1,20 @@
+diff -ruN python-blosc.orig/setup.py python-blosc.patched/setup.py
+--- setup.py	2016-07-19 13:17:58.850000001 +0000
++++ setup.py	2016-07-19 13:18:41.099001576 +0000
+@@ -103,6 +103,7 @@
+         elif os.name == 'nt':
+             def_macros += [('__SSE2__', 1)]
+     # AVX2
++    """
+     if 'avx2' in cpu_info['flags']:
+         print('AVX2 detected')
+         CFLAGS.append('-DSHUFFLE_AVX2_ENABLED')
+@@ -111,7 +112,7 @@
+             CFLAGS.append('-mavx2')
+         elif os.name == 'nt':
+             def_macros += [('__AVX2__', 1)]
+-
++    """
+ classifiers = """\
+ Development Status :: 5 - Production/Stable
+ Intended Audience :: Developers
